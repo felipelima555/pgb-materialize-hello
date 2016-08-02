@@ -65,7 +65,7 @@ coisa.addClass('collection-item waves-effect waves-orange white orange-text');
 		
 		// CLIQUE LONGO PARA EXCLUIR
 		  var timer;
-coisa.on("mousedown",function(){
+coisa.on("touchstart",function(){
 	var nomeItem = $(this).text();
     timer = setTimeout(function(){
 			
@@ -73,7 +73,7 @@ coisa.on("mousedown",function(){
           $('#modalExcluir').openModal();
 
     },500);
-}).on("mouseup mouseleave",function(){
+}).on("touchend mouseleave",function(){
     clearTimeout(timer);
 });
 		
@@ -91,6 +91,7 @@ $('#btnMostrarAdd').click(function() {
 	$('#listas').fadeOut(200, function(){
    $('#adicionar').fadeIn(500);
 		 $('#nomeNovo').focus();
+		 $('#nomeNovo').trigger('click');
 });
 	$('#btnMostrarAdd').fadeOut(500);
 	
