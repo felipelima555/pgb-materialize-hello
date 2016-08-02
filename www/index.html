@@ -9,13 +9,51 @@
     <title>Hello World (with Materialize)</title>
 </head>
 <body class='grey lighten-5'>
-    <div class='container'>
-        <h1 class='center-align'>Hello World</h1>
-        <p class='flow-text center-align'>This is an experiment to test out materialize in a PhoneGap build (coincidentally powered by Phone Gap Build). Enjoy!</p>
-        <div class='center-align'>
-        <button class='btn waves-effect waves-light' onclick="toast('Hello World!', 4000)">Say Hi!</button>
-        </div>
+   
+   <div class="navbar-fixed">
+	<nav>
+
+		<div class="nav-wrapper orange">
+			<a href="#" class="brand-logo center">Minhas Compras</a>
+		</div>
+	</nav>
+</div>
+
+<div class="container">
+<div class="row">
+
+<div id="listas">
+	<h6 class="center" style="margin-top:30px;">Para comprar</h6><ul class="collection with-header" id="ListaComprar"></ul><br/>
+	<h6 class="center">Em estoque</h6><ul class="collection with-header" id="ListaEstoque"></ul>
+</div>
+	
+	<div id="adicionar" style="display:none">
+			<div class="input-field"><input id="nomeNovo" placeholder="Adicionar item" type="text"></div>
+		<a href="#!" id="btnAdd" class="waves-effect waves-orange btn-flat right">Adicionar</a>
+		 <a href="#!" id="btnCancel" class="waves-effect waves-orange btn-flat right">Cancelar</a>
+	</div>
+
+
+</div>
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+<a href="#" class="btn-floating btn-large waves-effect waves-light orange" id="btnMostrarAdd"><i class="material-icons">add</i></a>
+
+						</div>
+
+
+<!-- Modal Structure -->
+  <div id="modalExcluir" class="modal">
+    <div class="modal-content">
+Deseja remover o item "<span id="spanNomeItem"></span>"?
     </div>
+    <div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Não</a>
+      <a href="#!" id="btnRemover" class=" modal-action modal-close waves-effect waves-green btn-flat">Sim</a>
+    </div>
+  </div>
+   
     <script src='cordova.js'></script>
     <script src='js/jquery-2.1.3.min.js'></script>
     <script src='js/materialize.min.js'></script>
